@@ -9,7 +9,7 @@ const store = configureStore({
     app: appSlice,
     search: searchSlice,
     chat: chatSlice,
-    video: videoSlice,
+    videos: videoSlice,
   },
 });
 
