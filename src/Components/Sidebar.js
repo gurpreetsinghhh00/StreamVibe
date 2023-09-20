@@ -5,10 +5,12 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
 
-  if (isMenuOpen === false) return null;
+  if (isMenuOpen === false) {
+    return null;
+  }
 
   return (
-    <div className="w-2/12 p-2 h-[90vh] overflow-y-scroll font-verela ">
+    <div className="w-2/12 p-2 h-[90vh] overflow-y-scroll font-verela">
       <div className="p-2 border-b-2">
         <ul>
           <li className="p-2 rounded-md hover:bg-gray-200">

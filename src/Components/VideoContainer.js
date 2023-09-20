@@ -15,7 +15,7 @@ const VideoContainer = () => {
     const json = await data.json();
 
     setVideos(json.items);
-    // console.log(json.items);
+    console.log(json.items);
   };
 
   return videos.length === 0 ? (

@@ -16,7 +16,7 @@ const SearchPage = () => {
 
   useEffect(() => {
     getSearchVideos();
-  }, []);
+  }, [searchParams.get("q")]);
 
   const getSearchVideos = async () => {
     const data = await fetch(
