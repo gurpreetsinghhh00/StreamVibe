@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import VideoContainer from "./VideoContainer";
 import { useSelector, useDispatch } from "react-redux";
 import CategoryList from "./CategoryList";
@@ -9,7 +9,7 @@ const list = [
   "All",
   "Gaming",
   "Music",
-  "Romance",
+  "Comedy",
   "Live",
   "DSA",
   "News",
@@ -18,6 +18,12 @@ const list = [
   "Science",
   "Cars",
   "Technology",
+  "Romance",
+  "Shorts",
+  "Genshin",
+  "Delhi",
+  "New",
+  "Movies",
 ];
 
 const MainContainer = () => {
@@ -39,7 +45,7 @@ const MainContainer = () => {
 
       setTimeout(() => {
         setIsThrottled(false);
-      }, 300);
+      }, 1000);
     }
   };
 
@@ -49,15 +55,15 @@ const MainContainer = () => {
     dispatch(addVideos(json.items));
   };
 
-  let width = isMenuOpen ? " w-10/12 px-12" : " w-full px-8";
+  // let width = isMenuOpen ? " w-10/12 " : " w-full";
 
   return (
     <div
-      className={"h-[90vh] overflow-y-scroll py-4" + width}
+      className={"h-[90vh] overflow-y-scroll py-4 px-6 w-full"}
       onScroll={(e) => handleScroll()}
     >
       <div className=" w-full py-1">
-        <ul className="flex gap-2 p-1 overflow-hidden">
+        <ul className="flex gap-2 p-1 overflow-scroll scrollbar-hide">
           {list.map((l) => {
             return <CategoryList name={l} key={l} />;
           })}

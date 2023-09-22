@@ -4,6 +4,7 @@ import { toggleMenu } from "../Utils/appSlice";
 import { YOUTUBE_SEARCH_API } from "../Utils/constant";
 import { cacheResults } from "../Utils/searchSlice";
 import { Link } from "react-router-dom";
+import search from "../assets/img/search.png";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -69,7 +70,7 @@ const Header = () => {
             className="border border-gray-200 py-2 px-3 rounded-l-full w-full outline-1 outline-gray-300 "
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            onClick={() => setShowSuggestion(true)}
+            onFocus={() => setShowSuggestion(true)}
           />
           {showSuggestion && (
             <div className="w-full rounded-md bg-white absolute top-11 shadow-md">
@@ -94,9 +95,9 @@ const Header = () => {
         <Link to={"/search?q=" + searchQuery}>
           <button
             onClick={() => setShowSuggestion(false)}
-            className="border border-gray-200 py-2 px-3 rounded-r-full font-bold border-l-0 bg-gray-200 "
+            className="border border-gray-300 py-2 px-6 rounded-r-full border-l-0 bg-gray-100 "
           >
-            Search
+            <img className="w-6" src={search} />
           </button>
         </Link>
       </div>

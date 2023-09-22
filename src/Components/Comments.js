@@ -8,7 +8,7 @@ const Comments = ({ data }) => {
       <img className="h-11 cursor-pointer " alt="userIcon" src={userIcon} />
       <div>
         <h2 className="font-bold">{name}</h2>
-        <p>{comment}</p>
+        <p className="text-xs md:text-base">{comment}</p>
       </div>
     </div>
   );
