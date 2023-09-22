@@ -10,14 +10,14 @@ import SidebarItems from "./SidebarItems";
 const Sidebar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
   const divStyle = `flex cursor-pointer rounded-md hover:bg-gray-200 p-2 items-center ${
-    isMenuOpen ? "flex-row gap-x-5 " : "flex-col gap-y-2"
+    isMenuOpen ? "flex-row gap-x-5" : "flex-col gap-y-2"
   }`;
   const para = isMenuOpen ? "text-md" : "text-xs font-bold";
 
   return (
     <div
-      className={`${
-        isMenuOpen ? "w-60 overflow-y-scroll" : "w-24"
+      className={`hidden sm:block ${
+        isMenuOpen ? "w-60 overflow-y-scroll" : "w-24 bg-gray-100"
       } p-2 h-[90vh] font-verela`}
     >
       <div className="py-2">

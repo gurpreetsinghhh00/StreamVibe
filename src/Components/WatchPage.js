@@ -7,7 +7,8 @@ import { YOUTUBE_ID_API } from "../Utils/constant";
 import LiveChat from "./LiveChat";
 import { addMessage } from "../Utils/chatSlice";
 import arrow from "../assets/img/arrow.png";
-import ChatMessage from "./ChatMessage";
+import like from "../assets/img/like.png";
+import dislike from "../assets/img/dislike.png";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
@@ -44,36 +45,31 @@ const WatchPage = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></iframe>
-            <h1 className="font-bold text-xl mt-4">
+            <h1 className="font-bold text-lg h-[3.9rem] overflow-hidden text-ellipsis py-1 mt-2">
               {videoDescription[0]?.snippet?.title}
             </h1>
-            <div className="grid grid-col-1  lg:grid-cols-2 lg:justify-between mt-4 gap-3 w-full">
+            <div className="flex justify-between mt-4 gap-3 overflow-x-scroll scrollbar-hide">
               <div className="flex items-center">
                 <a>
                   <img
-                    className="h-11 cursor-pointer"
+                    className="w-11 cursor-pointer"
                     alt="Channel Icon"
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-umWad93MGg29rt6KpquK3vSQBFjT1zcXThCCSzQ&s"
                   />
                 </a>
-                <h2 className="ml-2 font-bold text-lg cursor-pointer">
+                <h2 className="ml-2 font-bold text-md cursor-pointer w-40 text-ellipsis">
                   {videoDescription[0]?.snippet?.channelTitle}
                 </h2>
-                <button className="bg-black text-white py-2 px-3 rounded-md ml-20 lg:ml-8">
+                <button className="bg-black text-white py-2 px-3 rounded-md ml-4">
                   Subscribe
                 </button>
               </div>
-              <div className="flex items-center md:justify-start lg:justify-end">
-                <div className="ml-12">
-                  <button className="bg-gray-200 py-2 px-4 rounded-l-full border-r border-gray-300">
-                    like
-                  </button>
-                  <button className="bg-gray-200 py-2 px-4 rounded-r-full">
-                    Dislike
-                  </button>
-                </div>
-                <button className="bg-gray-200 py-2 px-4 rounded-full ml-[58px] lg:ml-8">
-                  Download
+              <div className="flex justify-end w-40 ml-4">
+                <button className="bg-gray-200 py-2 px-4 rounded-l-full border-r border-gray-300 w-16">
+                  <img className="w-6" src={like} alt="like" />
+                </button>
+                <button className="bg-gray-200 py-2 px-4 rounded-r-full w-16">
+                  <img className="w-6" src={dislike} alt="dislike" />
                 </button>
               </div>
             </div>

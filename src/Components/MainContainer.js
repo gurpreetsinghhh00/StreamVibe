@@ -28,7 +28,6 @@ const list = [
 
 const MainContainer = () => {
   const dispatch = useDispatch();
-  const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
 
   const [isThrottled, setIsThrottled] = useState(false);
 
@@ -55,11 +54,9 @@ const MainContainer = () => {
     dispatch(addVideos(json.items));
   };
 
-  // let width = isMenuOpen ? " w-10/12 " : " w-full";
-
   return (
     <div
-      className={"h-[90vh] overflow-y-scroll py-4 px-6 w-full"}
+      className={"h-[90vh] overflow-y-scroll py-4 px-8 sm:px-6 w-full"}
       onScroll={(e) => handleScroll()}
     >
       <div className=" w-full py-1">
