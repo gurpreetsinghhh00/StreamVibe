@@ -6,7 +6,7 @@ const videoSlice = createSlice({
   reducers: {
     addVideos: (state, action) => {
       if (state.length > 100) {
-        state.splice(0, 40);
+        state.splice(90, 40);
       }
       state.push(...action.payload);
     },
