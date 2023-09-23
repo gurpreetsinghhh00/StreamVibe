@@ -4,7 +4,7 @@ import userIcon from "../assets/img/userIcon.png";
 const SearchCard = ({ info }) => {
   const { snippet } = info;
   return (
-    <div className="flex flex-col items-centre p-2 w-full gap-4 sm:px-10 md:px-1 md:flex-row">
+    <div className="flex flex-col items-centre p-2 w-full gap-1 md:gap-4 sm:px-8 md:px-1 md:flex-row">
       <img
         className="rounded-lg w-full sm:h-60 md:w-[320px] md:h-44"
         src={snippet?.thumbnails?.medium?.url}

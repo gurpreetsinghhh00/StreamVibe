@@ -56,7 +56,7 @@ const MainContainer = () => {
 
   return (
     <div
-      className={"h-[90vh] overflow-y-scroll py-4 px-8 sm:px-6 w-full"}
+      className={"h-[90vh] overflow-y-scroll py-4 px-2 sm:px-6 w-full"}
       onScroll={(e) => handleScroll()}
     >
       <div className=" w-full py-1">

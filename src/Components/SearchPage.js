@@ -28,7 +28,7 @@ const SearchPage = () => {
   };
 
   return (
-    <div className="font-verela w-full h-[90vh] overflow-scroll p-8 flex flex-col gap-2">
+    <div className="font-verela w-full h-[90vh] overflow-scroll p-2 sm:p-4 md:p-6 flex flex-col gap-4">
       {searchVideoResults.map((video) => {
         return (
           <Link to={"/watch?v=" + video?.id?.videoId} key={video?.id?.videoId}>
