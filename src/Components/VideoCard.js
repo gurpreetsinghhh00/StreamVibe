@@ -10,11 +10,11 @@ const VideoCard = ({ info }) => {
       <div className="flex py-2">
         <img className="h-14 p-1" src={avatar} />
         <div className="flex flex-col px-1 gap-3">
-          <h1 className="font-bold text-lg h-[3.9rem] overflow-hidden text-ellipsis py-1">
+          <h1 className="font-bold text-lg h-[3.8rem] overflow-hidden text-ellipsis py-1">
             {title}
           </h1>
-          <div className="text-sm">
-            <h2 className="overflow-hidden text-ellipsis h-4 my-2">
+          <div className="text-sm w-[90%]">
+            <h2 className="overflow-hidden text-ellipsis h-5 my-2 w-full">
               {snippet.channelTitle}.✔
             </h2>
             <p>{statistics.viewCount} Views</p>

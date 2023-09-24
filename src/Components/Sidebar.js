@@ -16,7 +16,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`hidden sm:block ${
+      className={`hidden sm:block scrollbar-hide md:scrollbar-default ${
         isMenuOpen ? "w-60 overflow-y-scroll" : "w-24 bg-gray-100"
       } p-2 h-[90vh] font-verela`}
     >

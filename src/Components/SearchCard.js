@@ -10,7 +10,7 @@ const SearchCard = ({ info }) => {
         src={snippet?.thumbnails?.medium?.url}
       />
       <div className="flex flex-col px-1 py-2 justify-between gap-2">
-        <h1 className="font-bold text-lg h-[3.9rem] overflow-hidden text-ellipsis py-1">
+        <h1 className="font-bold text-lg h-[3.8rem] overflow-hidden text-ellipsis py-1">
           {snippet?.title}
         </h1>
         <div className="flex  items-center p-1 gap-2">
