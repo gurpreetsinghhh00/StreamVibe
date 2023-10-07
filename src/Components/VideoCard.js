@@ -9,8 +9,8 @@ const VideoCard = ({ info }) => {
       <img className="w-full rounded-md" src={thumbnails.medium.url} />
       <div className="flex py-2">
         <img className="h-14 p-1" src={avatar} />
-        <div className="flex flex-col px-1 gap-3">
-          <h1 className="font-bold text-lg h-[3.8rem] overflow-hidden text-ellipsis py-1">
+        <div className="flex flex-col px-1 gap-3 w-full">
+          <h1 className="font-bold text-lg h-[3.8rem] overflow-hidden text-ellipsis py-1 ">
             {title}
           </h1>
           <div className="text-sm w-[90%]">

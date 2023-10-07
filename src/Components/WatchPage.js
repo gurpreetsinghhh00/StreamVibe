@@ -37,13 +37,15 @@ const WatchPage = () => {
       <div className="p-1 md:p-2 flex flex-col gap-6 w-full xl:flex-row xl:p-4">
         <div className="flex flex-col w-full gap-5 px-1 xl:w-8/12 xl:p-0">
           <div>
-            <iframe
-              className="rounded-md w-full h-[280px] sm:h-80 md:h-[450px]"
-              src={"https://www.youtube.com/embed/" + searchParams.get("v")}
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
+            <div className="aspect-video">
+              <iframe
+                className="rounded-md w-full h-full"
+                src={"https://www.youtube.com/embed/" + searchParams.get("v")}
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
             <h1 className="font-bold text-lg h-[3.9rem] overflow-hidden text-ellipsis py-1 mt-2">
               {videoDescription[0]?.snippet?.title}
             </h1>
