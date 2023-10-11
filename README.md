@@ -1,8 +1,6 @@
-A Responsive and performant video streaming application has features such as:
-    - Search bar with suggestion that uses debouncing and caching to reduce number of api requests.
-    - Live Chat 
-    - Nested Comments
+A Responsive and performant video streaming application has features such as: - Search bar with suggestion that uses debouncing and caching to reduce number of api requests. - Live Chat - Nested Comments
 
+Please enable CORS for proper functioning of app.
 
 If you would like to contribute to this project, please follow these guidelines:
 
