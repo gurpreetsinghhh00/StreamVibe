@@ -3,17 +3,19 @@ import { useDispatch } from "react-redux";
 import { closeMenu } from "../Utils/appSlice";
 import { useSearchParams } from "react-router-dom";
 import CommentsContainer from "./CommentsContainer";
-import { YOUTUBE_ID_API } from "../Utils/constant";
+import { YOUTUBE_COMMENT_API, YOUTUBE_ID_API } from "../Utils/constant";
 import LiveChat from "./LiveChat";
 import { addMessage } from "../Utils/chatSlice";
 import arrow from "../assets/img/arrow.png";
 import like from "../assets/img/like.png";
 import dislike from "../assets/img/dislike.png";
+import VideoCommentsContainer from "./VideoCommentsContainer";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
   const [videoDescription, setVideoDescription] = useState([]);
   const [liveMessage, setLiveMessage] = useState("");
+  const [videoComments, setVideoComments] = useState([]);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,6 +24,7 @@ const WatchPage = () => {
 
   useEffect(() => {
     getVideo();
+    getVideoComments();
   }, []);
 
   const getVideo = async () => {
@@ -30,6 +33,12 @@ const WatchPage = () => {
 
     setVideoDescription(json.items);
     // console.log(videoDescription);
+  };
+
+  const getVideoComments = async () => {
+    const data = await fetch(YOUTUBE_COMMENT_API + searchParams.get("v"));
+    const json = await data.json();
+    setVideoComments(json.items.slice(0, 10));
   };
 
   return (
@@ -76,7 +85,7 @@ const WatchPage = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col border-2 p-2 rounded-md w-full xl:w-4/12 bg-gray-100 h-[550px]">
+        <div className="flex flex-col border-2 p-2 rounded-md w-full xl:w-4/12 bg-gray-100 h-[580px]">
           <h1 className="font-bold text-lg border-b-2 border-black p-2">
             Live Chat
           </h1>
@@ -111,6 +120,7 @@ const WatchPage = () => {
           </form>
         </div>
       </div>
+      <VideoCommentsContainer items={videoComments} />
       <CommentsContainer />
     </div>
   );

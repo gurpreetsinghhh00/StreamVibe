@@ -1,6 +1,6 @@
 ## StreamVibe
 
-A Responsive and performant video streaming application
+A Responsive and performant video streaming application.
 This app has following features such as:
 
 - A Search bar with suggestion that uses debouncing and caching to reduce number of api requests.

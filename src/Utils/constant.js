@@ -18,3 +18,8 @@ export const YOUTUBE_VIDEOS_SEARCH_RESULTS =
   "&q=";
 
 export const OFFSET_STRING_LEN = 25;
+
+export const YOUTUBE_COMMENT_API =
+  "https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&key=" +
+  API_KEY +
+  "&videoId=";
